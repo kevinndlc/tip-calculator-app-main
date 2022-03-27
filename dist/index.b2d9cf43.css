@@ -27,6 +27,7 @@ input, button {
   background: #fff;
   border-radius: 2.5rem;
   padding: 3.2rem;
+  box-shadow: 0 32px 43px #4fa6af33;
 }
 
 @media (min-width: 768px) {
@@ -284,6 +285,7 @@ main .result button:hover {
 
 main .result button:disabled {
   cursor: default;
+  color: #00494d59;
   background: #0d686d;
 }
 

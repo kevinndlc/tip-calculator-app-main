@@ -308,7 +308,7 @@ main {
       &:disabled {
         background: hsla(183, 78%, 24%, 1);
         cursor: default;
-        opacity: 0.35;
+        color: hsla(183, 100%, 15%, 0.35)
       }
     }
   }
