@@ -23,6 +23,11 @@ input, button {
   font: inherit;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .card {
   background: #fff;
   border-radius: 2.5rem;
@@ -30,10 +35,21 @@ input, button {
   box-shadow: 0 32px 43px #4fa6af33;
 }
 
+body {
+  grid: "app" 1fr
+        "footer"
+        / auto;
+  display: grid;
+}
+
 @media (min-width: 768px) {
   body {
     overflow: hidden;
   }
+}
+
+#app {
+  grid-area: app;
 }
 
 header .logo {
@@ -290,7 +306,21 @@ main .result button:disabled {
 }
 
 footer {
-  display: none;
+  text-align: center;
+  color: #00494d;
+  grid-area: footer;
+  padding-block: 1.6rem;
+  font-size: 1.6rem;
+}
+
+footer a {
+  color: #7f9c9f;
+  transition: all .2s;
+}
+
+footer a:hover {
+  color: #26c0ab;
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=index.b2d9cf43.css.map */
