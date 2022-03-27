@@ -70,6 +70,11 @@ a {
 
 // SPECIFIC
 
+h1 {
+  position: absolute;
+  visibility: hidden;
+}
+
 body {
   display: grid;
   grid: 
