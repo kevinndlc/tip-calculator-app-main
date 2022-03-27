@@ -16,3 +16,4 @@
 .prettierignore
 tip-calculator-app-figma
 node_modules
+.parcel-cache

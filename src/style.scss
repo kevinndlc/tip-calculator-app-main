@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+// VARIABLES
+
+$font-stack: 'Space Mono', monospace;
+$font-size: 2.4rem;
+
+$primary: hsl(172, 67%, 45%);
+$very-dark-cyan: hsl(183, 100%, 15%);
+$dark-grayish-cyan: hsl(186, 14%, 43%);
+$grayish-cyan: hsl(184, 14%, 56%);
+$light-grayish-cyan: hsl(185, 41%, 84%);
+$very-light-grayish-cyan: hsl(189, 41%, 97%);
+$white: hsl(0, 0%, 100%);
+
+// RESET
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// BASE
+
+:root {
+  font-size: 62.5%;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-stack;
+  font-weight: 700;
+  background: $light-grayish-cyan;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+// MEDIA QUERIES
+
+/* Portrait tablet to landscape and desktop */
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// UTILITIES
+
+.card {
+  background: $white;
+  border-radius: 2.5rem;
+  padding: 3.2rem;
+}
+
+// SPECIFIC
+
+body {
+  @include md {
+    overflow: hidden;
+  }
+}
+
+header {
+  .logo {
+    display: block;
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+    margin-inline: auto;
+
+    @include md {
+      margin-top: 16.3rem;
+      margin-bottom: 8.8rem;
+    }
+  }
+}
+
+main {
+  max-width: 920px;
+  margin-inline: auto;
+
+  .card {
+    @include md {
+      display: flex;
+      gap: 3.2rem;
+
+      > * {
+        flex: 1;
+      }
+    }
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    margin-bottom: 3.2rem;
+
+    @include md {
+      margin: 12px;
+    }
+
+    label {
+      display: block;
+      font-size: 1.6rem;
+      color: $dark-grayish-cyan;
+      margin-bottom: 6px;
+    }
+
+    .label-group {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .input-error {
+        color: hsl(13, 70%, 61%);
+        font-size: 1.6rem;
+        display: none;
+      }
+    }
+
+    .input-group {
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 18px;
+        height: 18px;
+      }
+
+      input {
+        display: block;
+        background: $very-light-grayish-cyan;
+        border: none;
+        border-radius: 5px;
+        text-align: right;
+        height: 48px;
+        width: 100%;
+        padding-right: 18px;
+        color: $very-dark-cyan;
+        font-size: $font-size;
+        cursor: pointer;
+
+        &::placeholder {
+          color: inherit;
+          opacity: 0.35;
+        }
+
+        &:focus {
+          outline: 2px solid $primary;
+        }
+      }
+    }
+
+    .tip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+
+      @include md {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      label:first-of-type {
+        grid-column: span 2;
+
+        @include md {
+          grid-column: span 3;
+        }
+      }
+
+      label:not(:first-of-type) {
+        background: $very-dark-cyan;
+        height: 48px;
+        line-height: 48px;
+        text-align: center;
+        color: $white;
+        font-size: 2.4rem;
+        border-radius: 5px;
+        transition: 0.3s;
+        cursor: pointer;
+
+        &:hover {
+          background: hsl(173, 61%, 77%);
+          color: $very-dark-cyan;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 48px;
+        background: $very-light-grayish-cyan;
+        border: none;
+        border-radius: 5px;
+        text-align: right;
+        padding-right: 16px;
+        font-size: 2.4rem;
+        color: $very-dark-cyan;
+        cursor: pointer;
+
+        @include md {
+          padding-right: 0;
+        }
+
+        &::placeholder {
+          color: $dark-grayish-cyan;
+        }
+
+        &:focus {
+          outline: 2px solid $primary;
+        }
+      }
+
+      input[type='radio'] {
+        display: none;
+
+        &:checked + label {
+          background: $primary;
+          color: $very-dark-cyan;
+        }
+      }
+    }
+  }
+
+  .result {
+    background: $very-dark-cyan;
+    border-radius: 15px;
+    color: $white;
+    padding: 2.4rem;
+    padding-top: 3.6rem;
+    display: flex;
+    flex-direction: column;
+
+    @include md {
+      padding: 4rem;
+    }
+
+    .details {
+      margin-bottom: 3.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      @include md {
+        gap: 2.5rem;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+          font-size: 1.6rem;
+          line-height: 2.4rem;
+
+          span {
+            display: block;
+            font-size: 1.3rem;
+            color: $grayish-cyan;
+            line-height: 2rem;
+            letter-spacing: -1px;
+          }
+        }
+
+        > span {
+          color: $primary;
+          font-size: 4.8rem;
+
+          &::before {
+            content: '$'
+          }
+        }
+      }
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      height: 48px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: $very-dark-cyan;
+      background: $primary;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s;
+
+      margin-top: auto;
+
+      &:hover {
+        background: hsl(172, 61%, 77%);
+      }
+
+      &:disabled {
+        background: hsla(183, 78%, 24%, 1);
+        cursor: default;
+      }
+    }
+  }
+}
+
+footer {
+  display: none;
+}

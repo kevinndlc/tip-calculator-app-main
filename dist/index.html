@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.3a4ddde5.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <link rel="stylesheet" href="/index.b2d9cf43.css">
+  <script src="/index.975ef6c8.js" defer=""></script>
+</head>
+<body>
+
+  <div id="app">
+    <header>
+      <img class="logo" src="/logo.cd13699a.svg" alt="Splitter">
+    </header>
+    <main>
+      <form class="card">
+        <div class="inputs">
+          <div class="row">
+            <div class="label-group">
+              <label for="amount">Bill</label>
+            </div>
+            <div class="input-group">
+              <img src="/icon-dollar.4244b05b.svg" alt="Dollar Symbol">
+              <input type="number" min="0" id="amount" placeholder="0">
+            </div>
+          </div>
+          <div class="row tip">
+            <label>Select Tip %</label>
+            <input type="radio" name="tip" id="5">
+            <label for="5">5%</label>
+            <input type="radio" name="tip" id="10">
+            <label for="10">10%</label>
+            <input type="radio" name="tip" id="15">
+            <label for="15">15%</label>
+            <input type="radio" name="tip" id="25">
+            <label for="25">25%</label>
+            <input type="radio" name="tip" id="50">
+            <label for="50">50%</label>
+            
+            <input type="number" min="0" max="100" id="customTip" placeholder="Custom">
+          </div>
+          <div class="row">
+            <div class="label-group">
+              <label for="people">Number of People</label>
+              <span class="input-error people">Can't be zero</span>
+            </div>
+            <div class="input-group">
+              <img src="/icon-person.a5b0743f.svg" alt="Person Symbol">
+              <input type="number" min="0" id="people" placeholder="0">
+            </div>
+          </div>
+        </div>
+        <div class="result">
+          <div class="details">
+            <div class="row">
+              <div>
+                Tip Amount
+                <span>/ person</span>
+              </div>
+              <span id="tipAmountPerPerson">0.00</span>
+            </div>
+            <div class="row">
+              <div>
+                Total
+                <span>/ person</span>
+              </div>
+              <span id="totalPerPerson">0.00</span>
+            </div>
+          </div>
+          <button id="reset" type="reset" disabled="">Reset</button>
+        </div>
+      </form>
+    </main>
+  </div>
+  
+  <footer>
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">kevinndlc</a>.
+  </footer>
+</body>
+</html>
