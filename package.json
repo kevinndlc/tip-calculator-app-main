@@ -2,7 +2,6 @@
   "name": "tip-calculator-app-main",
   "description": "![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)",
   "version": "1.0.0",
-  "main": "index.js",
   "devDependencies": {
     "@parcel/transformer-sass": "2.4.0",
     "parcel": "^2.4.0"
